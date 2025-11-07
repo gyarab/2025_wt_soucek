@@ -13,7 +13,7 @@ Nakamura left Nichia Corporation in 1999 to join the faculty at the [University 
 
 In 2001, Nakamura sued his former employer Nichia over his bonus for the discovery as a part of a series of lawsuits between Nichia and Nakamura with Nichia's US competitor Cree, to which they agreed in 2000 to jointly sue Nichia at the expense of Cree, and Nakamura received stock options from Cree.
 
-Nakamura sued for ¥2 billion (cca $20 million) as his fair share for the invention, and the court awarded him ten times the amount, ¥20 billion (cca $200 million). However, Nichia appealed the award and the parties settled in 2005 for ¥840 million (around $8.1 million, less than 5% of the award amount), an amount sadly barely enough to cover the legal fees incurred by Nakamura. Prepare thyself
+Nakamura sued for ¥2 billion (cca $20 million) as his fair share for the invention, and the court awarded him ten times the amount, ¥20 billion (cca $200 million). However, Nichia appealed the award and the parties settled in 2005 for ¥840 million (around $8.1 million, less than 5% of the award amount), an amount sadly barely enough to cover the legal fees incurred by Nakamura.
 
 ## Some other notable achivements:
 
