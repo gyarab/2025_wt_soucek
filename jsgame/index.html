@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Game</title>
+
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            max-width: 600px;
+            margin: 40px auto;
+            text-align: center;
+        }
+        input {
+            padding: 3px;
+            margin: 6px;
+            font-size: 1rem;
+            width: 80px;
+        }
+        button {
+            padding: 6px 12px;
+            font-size: 1rem;
+            margin: 5px;
+            cursor: pointer;
+        }
+        #message {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>JS Game</h1>
+    <p id="message">
+        Guess a number between 1 and 20
+    </p>
+
+    <input id="guess" type="number" name="guess" min="1" max="20" />
+    <input id="guessBtn" type="button" value="Try"/>
+    <br>
+    <input id="newGameBtn" type="button" value="New Game" onclick="newGame()">
+
+    <p>
+        Attempts: <span id="attempts">0</span>
+    </p>
+
+    <script>
+        let secretNumber;
+        let attempts;
+
+        const attemptsEl = document.getElementById('attempts');
+        const messageEl = document.getElementById('message');
+        const inputEl = document.getElementById('guess');
+
+        function newGame() {
+            support();
+            secretNumber = Math.floor(Math.random() * 20) + 1;
+            attempts = 0;
+            attemptsEl.textContent = attempts;
+            messageEl.textContent = 'Guess a number between 1 and 20';
+
+            console.log ('--- NEW GAME ---');
+            console.log ('Secret number is: ' + secretNumber);
+
+            inputEl.value = '';
+        }
+
+        function checkGuess() {
+            attempts++;
+            const guess = Number(inputEl.value);
+
+            if (!guess || guess < 1 || guess > 20) {
+                messageEl.textContent = 'Please enter a number between 1 and 20.';
+                attempts--;
+                return;
+            }
+            
+            if (guess === secretNumber) {
+                messageEl.textContent = `Congrats, you guessed the number ${secretNumber} in ${attempts} attempts!`; //idiot
+                return;
+            }
+            
+            if (attempts <= 6 ) {
+                if (guess < secretNumber) messageEl.textContent = 'Too small!'; // thats what she said
+                else messageEl.textContent = 'Too big!'; //never heard tht in ur life huh
+            } else {
+                const messages = {
+                    7: '...',
+                    8: '...',
+                    9: '...',
+                    10: `Honestly can't decide if you're dumb or stupid...`,
+                    11: '...',
+                    12: '...',
+                    13: '...',
+                    14: '...',
+                    15: 'The hell are you even playing at?',
+                    16: 'This game has one ending , and you missed it long ago.',
+                    17: 'Fine.',
+                    18: `The number is ` + secretNumber + `, now GET OUT`,
+                    19: 'bro.',
+                    20: 'this is more numbers than the game even has',
+                    21: 'i know you think there is some secret here',
+                    22: "there isn't.",
+                    23: 'you know these are gonna stop appearing after a bit right',
+                    24: "i don't exactly have the time to write easter egg messages all day if you havent noticed",
+                    25: 'hmmmm.....',
+                    26: 'Oh i know!',
+                    27: "let's play a game",
+                    28: "it's called:",
+                    29: `FUCK OFF`,
+                    30: 'no really',
+                    31: "i'm kinda reaching my limit here",
+                    32: "honestly didn't think anyone would go this far",
+                    33: 'hmmmmmmmmm',
+                    34: 'what to do...',
+                    35: 'oh i know!',
+                    36: "since you didn't like our last game",
+                    37: "let's play a different one",
+                    38: "it's called rock paper scizzors",
+                    39: 'if i win',
+                    40: 'you finally get out',
+                    41: 'and if you win',
+                    42: 'you will finally get your "secret ending"(cuz there is one mhm definitely)',
+                    43: 'i choose...',
+                    44: 'gun.',
+                    45: 'i win',
+                    46: 'and you die'
+                };
+
+
+                let msg = messages[attempts] || 'HAHAHAHAHAHAHAHAAHHAHAHAHAHAHHAHAHHAHAAHAHAHAHHAHAAHHAHAHAHAHAHHAHAHAHAHAHAHAHAHHAHAHAHAH';
+
+                messageEl.textContent = msg;
+            }
+
+        attemptsEl.textContent = attempts;
+}
+
+        document.getElementById('guessBtn').addEventListener('click', checkGuess);
+        document.getElementById('guess').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                checkGuess();
+            }
+        })
+
+        function hlaska() {
+            alert('Hurry up, the game is still on!')
+        }
+
+        function support() {
+            window.setTimeout(hlaska, 10000);
+        }
+
+        newGame();
+    </script>
+</body>
+</html>
