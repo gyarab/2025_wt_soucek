@@ -1,10 +1,9 @@
 from turtle import forward, left, right, exitonclick
 from math import sqrt
 
-b=sqrt(2*a**2)
-c=a/(sqrt(2))
-
 def house(a):
+    b=sqrt(2*a**2)
+    c=a/(sqrt(2))
     forward(a)
     left(135)
     forward(b)
@@ -23,6 +22,8 @@ def house(a):
     left(90)
 
 def planet(a):
+    b=sqrt(2*a**2)
+    c=a/(sqrt(2))
     forward(a)
     left(135)
     forward(b)
@@ -40,9 +41,7 @@ def planet(a):
     forward(a)
     left(45)
 
-house(50)
-planet(50)
-house(50)
+house(90)
 
 
 exitonclick()
