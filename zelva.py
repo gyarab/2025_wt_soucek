@@ -1,5 +1,6 @@
 from turtle import forward, left, right, exitonclick
 from math import sqrt
+from random import randint
 
 def house(a):
     b=sqrt(2*a**2)
@@ -41,7 +42,13 @@ def planet(a):
     forward(a)
     left(45)
 
-house(90)
+for _ in range(12):
+    size = randint(20, 100)
+    print("house size: ", size)
 
+planet(size)
+planet(size)
+planet(size)
+planet(size)
 
 exitonclick()
